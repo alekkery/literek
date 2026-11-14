@@ -1,0 +1,45 @@
+[project]
+name = "literek-py"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy<2",
+    "opencv-python==4.9.0.80",
+    "pygame>=2.6.1",
+    "rich>=15.0.0",
+    "tensorflow==2.15.1; sys_platform != 'win32'",
+    "tensorflow-intel==2.15.1; sys_platform == 'win32'",
+]
+
+#-------------------------------------------#
+
+[tool.basedpyright]
+venvPath = "."
+venv = ".venv"
+
+#-------------------------------------------#
+
+[tool.ruff]
+line-length = 100
+
+target-version = "py311" 
+
+[tool.ruff.format]
+indent-style = "tab"
+
+[tool.ruff.lint]
+select = [
+	"E",      # pycodestyle errors (syntax/formatting errors)
+	"F",      # pyflakes (undefined names, unused imports/variables)
+	"I",      # isort (automatically sorts imports)
+	"B",      # flake8-bugbear
+	"UP",     # pyupgrade
+	"ASYNC",  # flake8-async
+]
+ignore = [
+	"E111",   # "indentation is not a multiple of 4"
+	"W191",   # "indentation contains tabs"
+    "E741",   # "ambigus var name"
+]

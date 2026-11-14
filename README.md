@@ -1,0 +1,1 @@
+wypakowane pliki z teachable machine idą do `./modeldata/`
